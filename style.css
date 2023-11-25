@@ -1,0 +1,299 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* background css */
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: url("./images/background_stock.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.signindiv{
+  display: flex;
+  justify-content: flex-end;
+  height: 50vh;
+  width: 34vh;
+  flex-direction: column;
+  margin: auto;
+  padding: auto;
+}
+
+.signupdiv{
+      display: flex;
+  justify-content: flex-end;
+  height: 70vh;
+  width: 34vh;
+  flex-direction: column;
+  margin: auto;
+  padding: auto;
+
+}
+/* button css */
+.btn-comm{
+
+background-color: rgb(212, 154, 154);
+color: white;
+border: 4px solid white;
+border-radius: 10px;
+
+}
+
+/* badge signup as reseller css */
+.badge{
+    background-color: rgb(124, 30, 30);
+color: rgb(255, 255, 255);
+border: 2px solid white;
+}
+
+/* main-header css */
+.main-header{
+color: white;
+}
+
+/* icon in navbar css */
+.fa-cubes-stacked{
+    color: rgb(212, 154, 154);
+    font-size: 2rem;
+}
+
+/* admin panel side bar css */
+
+*{
+  padding: 0px;
+  margin: 0px;
+  
+}
+
+ul{
+  padding: 0px;
+  margin: 0px;
+}
+.sidebar a {
+
+  list-style: none;
+  text-decoration: none;
+}
+.sidebar li {
+ 
+ /* margin-left: 100px; */
+ /* background-color: red; */
+ margin-left: 12px;
+  list-style: none;
+  text-decoration: none;
+  text-align: left;
+}
+.sidebar .sidebar-header{
+  color: white;
+  font-size: 1.5rem;
+
+  text-align: center;
+  /* line-height: 70px; */
+  background-color: rgb(31, 29, 28);
+  user-select: none;
+}
+.sidebar{
+  position: fixed;
+  left: 0px;
+  width: 250px;
+  height: 100%;
+  background: rgb(46, 40, 40);
+  
+ 
+}
+
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 19px;
+  color: white;
+  padding-left: 0px !important ;
+
+  box-sizing: border-box;
+  border-top: 1px solid rgba(114, 109, 109, 0.1);
+
+}
+.sidebar i{
+  margin: 12px;
+}
+
+.sidebar li:hover{
+  background-color: rgb(15, 15, 15);
+}
+
+ul li:hover a{
+  padding-left: 50px;
+}
+
+.sidebar ul a i{
+  margin-right: 16px;
+}
+ /* label #cancel{
+  position: absolute;
+  cursor: pointer;
+  background: rgb(63, 63, 63);
+  border-radius: 3px;
+} */
+label #cancel{
+  z-index: 1111;
+  left: 195px;
+  top: -2px;
+  font-size: 20px;
+  color: white;
+  padding: 3px 5px;
+}
+
+#check{
+  display: none;
+}
+label #bar_btn, label #cancel{
+  position: absolute;
+  cursor: pointer;
+  background: rgb(63, 63, 63);
+  border-radius: 3px;
+}
+
+label #bar_btn{
+  left: 40px;
+  top:25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+}
+
+
+
+#check:checked ~ .sidebar{
+left:-250px;
+}
+
+
+/* .sidecontainer{
+    width: 30vw;
+    height: 100vh;
+    background-color: rgb(43, 39, 39);
+}
+ 
+.logo .fa-cubes-stacked{
+    color: white;
+    margin: 20px;
+}
+
+.appname-header{
+    color: white;
+    font-size: .4rem;
+     margin-top: 10px;
+     padding-left: 20px;
+} */
+
+/* table css */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+margin: 20px;
+margin-left: 20px;
+border: 3px solid rgb(27, 27, 27);
+border-radius: 60px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
+
+.fa-trash{
+  color: red;
+  /* margin-right: 12px; */
+}
+.fa-pencil {
+  color: rgb(23, 24, 23);
+    margin-left: 12px;
+}
+.coloured-white{
+  background-color: #dddddd;
+}
+.coloured-transparent{
+   background-color: transparent;
+}
+.pencilbtn, .trashbtn{
+    background-color: transparent;
+    border: none;
+}
+/* .fa-sliders-simple{
+  color: rgb(153, 24, 24);
+  font-size: 50px;
+} */
+
+@media screen and (max-width: 672px  ) {
+  .sidebar-css .sidebar{
+    width: 200px;
+
+  }
+  .sidebar .sidebar-header{
+
+  font-size: 1rem;
+ 
+}
+}
+
+@media screen and (max-width: 575px) {
+  .sidebar-css .sidebar{
+    width: 150px;
+
+  }
+  .sidebar .sidebar-header{
+
+  font-size: 1rem;
+
+ 
+ 
+}
+}
+
+
+@media screen and (max-width: 560px) and (min-width:500px) {
+  .sidebar-css .sidebar{
+    width: 100px;
+
+  }
+  .sidebar .sidebar-header{
+
+  font-size: 1rem;
+
+ 
+ 
+}
+}
+
+/* add color modal css */
+#color-edit-input{
+  color: #000;
+  border: 2px solid rgb(6, 95, 6);
+}
+#color-edit-input:focus{
+box-shadow: 0 0 5pt 0.5pt rgb(69, 223, 120);
+  border: 2px solid rgb(6, 95, 6);
+}
+
+.ResellerTitle-Header{
+  padding-left: 0px;
+  margin: 0;
+}
+

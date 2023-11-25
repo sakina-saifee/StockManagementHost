@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color</title>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
+      integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="background"></div>
+
+    <!-- <div class="sidecontainer">
+
+        <div class="container">
+            <div class="row">
+            <div class="col-3">
+                <div class="logo">
+                        <i class="fa fa-cubes-stacked"></i>
+                </div>
+
+            </div>
+
+<div class="col-9">
+  <div class="appname-header">
+                <h3>Stock Management</h3>
+
+            </div>
+</div>
+          
+            </div>
+        </div>
+        
+    </div> -->
+
+    <div class="container">
+      <div class="row">
+        <!-- side bar container start-->
+
+        <div class="col-3 col-lg-2 col-md-4 col-sm-4 sidebar-css">
+          <input type="checkbox" id="check" value="" />
+          <label for="check">
+            <i class="fas fa-bars" id="bar_btn"></i>
+          </label>
+          <div class="sidebar">
+            <div class="sidebar-header">
+              <div class="row">
+                <div class="col-4">
+                  <input type="checkbox" id="check" />
+                  <label for="check">
+                    <i class="fa fa-cubes-stacked"></i>
+                    <i class="fas fa-times" id="cancel"></i>
+                  </label>
+                </div>
+                <div class="col-3">
+                  <header>Stock Management</header>
+                </div>
+              </div>
+            </div>
+
+            <ul>
+              <li>
+                <a href="#"><i class="fas fa-qrcode"></i>Dashboard</a>
+              </li>
+              <li>
+                <a href="color.html"><i class="fas fa-link"></i>Color</a>
+              </li>
+              <li>
+                <a href="stock.html"><i class="fas fa-stream"></i>Stock </a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-calendar-week"></i>Distribution</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-question-circle"></i>About</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-sliders-h"></i>Services</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-envelope"></i>Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- side bar container end-->
+
+        <div class="col-9 col-lg-9 col-md-8 col-sm-8 table-css">
+          <!-- color table start-->
+
+          <!--add color btn -->
+          <div class="d-flex flex-row-reverse my-3">
+            <button
+              class="btn btn-success"
+              data-toggle="popover"
+              title="Add Color"
+              id="addcolor-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalCenter"
+            >
+              Add color
+            </button>
+            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+  Launch demo modal
+</button> -->
+          </div>
+          <!-- Button trigger modal -->
+
+          <!-- Modal for add color start -->
+          <div
+            class="modal fade"
+            id="exampleModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">
+                    Add Color
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span
+                        class="input-group-text"
+                        id="inputGroup-sizing-default"
+                        >Name</span
+                      >
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="color-input"
+                      aria-label="Default"
+                      aria-describedby="inputGroup-sizing-default"
+                    />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="savechanges_colorbtn"
+                  >
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Modal for add color end-->
+
+<!--Modal for edit color start-->
+  <!-- Modal -->
+          <div
+            class="modal fade"
+            id="editModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">
+                    Edit Color
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span
+                        class="input-group-text"
+                        id="inputGroup-sizing-default"
+                        >Name</span
+                      >
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control-modal"
+                      id="color-edit-input"
+                      aria-label="Default"
+                      aria-describedby="inputGroup-sizing-default"
+                    />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="edit_colorbtn"
+                  >
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Modal for edit color end-->
+          <table >
+            <thead>
+            <tr>
+              <th>Id</th>
+              <th>Color</th>
+              <th>Action</th>
+            </tr>
+      </thead>
+       <tbody id="color-table">
+
+            </tbody>
+          </table>
+
+          <!-- color table end-->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

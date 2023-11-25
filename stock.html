@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Management</title>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
+      integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="container">
+      <div class="row">
+        <!-- side bar container start-->
+
+        <div class="col-3 col-lg-2 col-md-4 col-sm-4 sidebar-css">
+          <input type="checkbox" id="check" value="" />
+          <label for="check">
+            <i class="fas fa-bars" id="bar_btn"></i>
+          </label>
+          <div class="sidebar">
+            <div class="sidebar-header">
+              <div class="row">
+                <div class="col-4">
+                  <input type="checkbox" id="check" />
+                  <label for="check">
+                    <i class="fa fa-cubes-stacked"></i>
+                    <i class="fas fa-times" id="cancel"></i>
+                  </label>
+                </div>
+                <div class="col-3">
+                  <header>Stock Management</header>
+                </div>
+              </div>
+            </div>
+
+            <ul>
+              <li>
+                <a href="#"><i class="fas fa-qrcode"></i>Dashboard</a>
+              </li>
+              <li>
+                <a href="color.html"><i class="fas fa-link"></i>Color</a>
+              </li>
+              <li>
+                <a href="stock.html"><i class="fas fa-stream"></i>Stock </a>
+              </li>
+              <li>
+                <a href="distribution.html"><i class="fas fa-calendar-week"></i>Distribution</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-question-circle"></i>About</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-sliders-h"></i>Services</a>
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-envelope"></i>Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- side bar container end-->
+
+        <div class="col-9 col-lg-9 col-md-8 col-sm-8 table-css">
+          <!--add stock btn start -->
+          <div class="d-flex flex-row-reverse my-3">
+            <button
+              class="btn btn-success"
+              data-toggle="popover"
+              title="Add Color"
+              id="addstock-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModalCenter"
+            >
+              Add Stock
+            </button>
+
+          </div>
+          <!--add stock btn end -->
+
+          <!-- Button trigger modal -->
+
+          <!-- Modal for add stock start -->
+          <div
+            class="modal fade"
+            id="exampleModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">
+                    Add Stock
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <!--modal body start-->
+                <div class="modal-body">
+                  <!-- input for qty -->
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="ColorNameLabel" class="form-label">Qty</label>
+                    </div>
+
+                    <div class="col-3">
+                      <div class="input-group quantity-selector">
+                        <input
+                          type="number"
+                          id="inputQuantitySelector"
+                          class="form-control"
+                          aria-live="polite"
+                          data-bs-step="counter"
+                          name="quantity"
+                          title="quantity"
+                          value="0"
+                          min="0"
+                          max="50"
+                          step="1"
+                          data-bs-round="0"
+                          aria-label="Quantity selector"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- input for colour -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Color</label
+                      >
+                    </div>
+
+                    <div class="col-4">
+                      <input
+                        class="form-control"
+                        list="datalistOptions_color"
+                        id="choosenColorName"
+                        placeholder="Choose Color"
+                      />
+                      <datalist id="datalistOptions_color">
+                        <!-- <option value="San Francisco">
+  <option value="New York">
+  <option value="Seattle">
+  <option value="Los Angeles">
+  <option value="Chicago">-->
+                      </datalist>
+                    </div>
+                  </div>
+
+                  <!-- input for reseller price -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Reseller Price</label
+                      >
+                    </div>
+
+                    <div class="col-6">
+                      <input
+                        class="form-control"
+                        id="resellerPriceInp"
+                        placeholder="Enter Reseller Price"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- input for wholesaler price -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Whole Sale Price</label
+                      >
+                    </div>
+
+                    <div class="col-6">
+                      <input
+                        class="form-control"
+                        id="wholeSalerPriceInp"
+                        placeholder="Enter WholeSale Price"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- input for product title -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Product Title</label
+                      >
+                    </div>
+
+                    <div class="col-6">
+                      <input
+                        class="form-control"
+                        id="productTitleInp"
+                        placeholder="Product Title"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- input for product description -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Product Description</label
+                      >
+                    </div>
+
+                    <div class="col-6">
+                      <div class="form-group">
+                      
+                        <textarea
+                          class="form-control"
+                          id="productDescriptionInp"
+                          rows="5" placeholder="Product Description Goes Here..."
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--modal body end-->
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="savechanges_stockbtn"
+                  >
+                    Save changes
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+ <!-- Modal for add stock end -->
+
+<!--Modal for edit stock start-->
+          <div
+            class="modal fade"
+            id="editModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">
+                    Edit Stock
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <!--modal body start-->
+                <div class="modal-body">
+                  <!-- input for qty -->
+                  <div class="row">
+                    <div class="col-3">
+                      <label for="ColorNameLabel" class="form-label">Qty</label>
+                    </div>
+
+                    <div class="col-3">
+                      <div class="input-group quantity-selector">
+                        <input
+                          type="number"
+                          id="inputQuantitySelector"
+                          class="form-control"
+                          aria-live="polite"
+                          data-bs-step="counter"
+                          name="quantity"
+                          title="quantity"
+                          value="0"
+                          min="0"
+                          max="50"
+                          step="1"
+                          data-bs-round="0"
+                          aria-label="Quantity selector"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- input for colour -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Color</label
+                      >
+                    </div>
+
+                    <div class="col-4">
+                      <input
+                        class="form-control"
+                        list="datalistOptions_color"
+                        id="choosenColorName"
+                        placeholder="Choose Color"
+                      />
+                      <datalist id="datalistOptions_color">
+                        <!-- <option value="San Francisco">
+  <option value="New York">
+  <option value="Seattle">
+  <option value="Los Angeles">
+  <option value="Chicago">-->
+                      </datalist>
+                    </div>
+                  </div>
+
+                  <!-- input for reseller price -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Reseller Price</label
+                      >
+                    </div>
+
+                    <div class="col-6">
+                      <input
+                        class="form-control"
+                        id="resellerPriceInp"
+                        placeholder="Enter Reseller Price"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- input for wholesaler price -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Whole Sale Price</label
+                      >
+                    </div>
+
+                    <div class="col-6">
+                      <input
+                        class="form-control"
+                        id="wholeSalerPriceInp"
+                        placeholder="Enter WholeSale Price"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- input for product title -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Product Title</label
+                      >
+                    </div>
+
+                    <div class="col-6">
+                      <input
+                        class="form-control"
+                        id="productTitleInp"
+                        placeholder="Product Title"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- input for product description -->
+                  <div class="row my-3">
+                    <div class="col-3">
+                      <label for="exampleDataList" class="form-label"
+                        >Product Description</label
+                      >
+                    </div>
+
+                    <div class="col-6">
+                      <div class="form-group">
+                      
+                        <textarea
+                          class="form-control"
+                          id="productDescriptionInp"
+                          rows="5" placeholder="Product Description Goes Here..."
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!--modal body end-->
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    id="edit_stockbtn"
+                  >
+                    Edit
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+<!--Modal for edit stock end-->
+
+          <!-- stock table start-->
+          <table >
+            <thead>
+                <th>Date</th>
+              <th>QTY</th>
+              <th>Color</th>
+              <th>Reseller Price</th>
+              <th>WholeSale Price</th>
+              <th>Product Title</th>
+              <th>Product Description</th>
+              <th>Action</th>
+            </thead>
+            <tbody id="stock-table">
+
+            </tbody>
+          </table>
+
+          <!-- stock table end-->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>
